@@ -11,7 +11,7 @@ import Naloga.Booking.Database.*;
 @RestController
 public class FlightController {
     @Autowired
-    private FlightsService flightsService;
+    private FlightsService flightsService = new FlightsService();
 
 
 
@@ -20,9 +20,9 @@ public class FlightController {
         return flightsService.getAll();
     }
 
-    @PutMapping
-    public void bookSeat(String flightID, int numberOfSeats){
-        flightsService.bookSeat(flightID, numberOfSeats);
+    @PutMapping()
+    public boolean bookSeat(String flightID, int numberOfSeats){
+        return flightsService.bookSeat(flightID, numberOfSeats);
     }
 
 

@@ -18,10 +18,10 @@ public class FlightsService {
         return db.get(id);
     }
 
-    public void bookSeat(String id, int numberOfSeats){
-        Field cur = db.get(id);
-        cur.setNumberOfAvailableSeats(cur.getNumberOfAvailableSeats() - numberOfSeats);
-        db.insert(cur);
+    public boolean bookSeat(String id, int numberOfSeats){
+        return db.setNumOfAvailable(id, numberOfSeats);
+
+
     }
 
 

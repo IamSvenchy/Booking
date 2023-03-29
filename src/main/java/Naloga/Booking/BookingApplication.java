@@ -29,14 +29,12 @@ public class BookingApplication {
 			while ((fieldVal = br.readLine()) != null) {
 				String[] fields = fieldVal.split("-");
 				Field newField = new Field(fields[0], fields[1], fields[2], fields[3], Integer.parseInt(fields[4]));
-				System.out.println(newField.toString());
 				db.insert(newField);
 			}
 		}catch (IOException e){
 			System.out.println(e);
 		}
 
-		System.out.println(db.setNumOfAvailable("SA001", 49));
 	}
 
 }
