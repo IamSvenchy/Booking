@@ -78,7 +78,7 @@ public class GUI {
                         }
                     }
                 }else{
-                    JOptionPane.showMessageDialog(mainWindow, "Jok brate odpade");
+                    JOptionPane.showMessageDialog(mainWindow, "Na voljo ni dovolj mest za rezervacijo");
                 }
             }
         });
