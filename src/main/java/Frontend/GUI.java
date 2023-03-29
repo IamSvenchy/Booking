@@ -68,9 +68,7 @@ public class GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = Objects.requireNonNull(dropdown.getSelectedItem()).toString();
-                System.out.println(id);
                 int numOfSeats = Integer.parseInt(input.getText());
-                System.out.println(numOfSeats);
                 FlightController post = new FlightController();
                 if(post.bookSeat(id, numOfSeats)){
                     String[][] newTable = getItems();
@@ -79,7 +77,8 @@ public class GUI {
                             tabela.setValueAt(newTable[i][j],i,j);
                         }
                     }
-
+                }else{
+                    JOptionPane.showMessageDialog(mainWindow, "Jok brate odpade");
                 }
             }
         });
